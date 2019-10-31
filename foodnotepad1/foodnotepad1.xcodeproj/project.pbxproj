@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81AAD9FE2363E92D003B77EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AAD9FD2363E92D003B77EB /* AppDelegate.swift */; };
+		81AADA002363E92D003B77EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AAD9FF2363E92D003B77EB /* ViewController.swift */; };
+		81AADA032363E92D003B77EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AADA012363E92D003B77EB /* Main.storyboard */; };
+		81AADA062363E92D003B77EB /* foodnotepad1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81AADA042363E92D003B77EB /* foodnotepad1.xcdatamodeld */; };
+		81AADA082363E92E003B77EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AADA072363E92E003B77EB /* Assets.xcassets */; };
+		81AADA0B2363E92E003B77EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AADA092363E92E003B77EB /* LaunchScreen.storyboard */; };
+		81AADA132363EB5B003B77EB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AADA122363EB5B003B77EB /* MainTableViewController.swift */; };
+		81AADA152363EB97003B77EB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AADA142363EB97003B77EB /* DetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		81AAD9FA2363E92D003B77EB /* foodnotepad1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodnotepad1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AAD9FD2363E92D003B77EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81AAD9FF2363E92D003B77EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81AADA022363E92D003B77EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		81AADA052363E92D003B77EB /* foodnotepad1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = foodnotepad1.xcdatamodel; sourceTree = "<group>"; };
+		81AADA072363E92E003B77EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81AADA0A2363E92E003B77EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81AADA0C2363E92E003B77EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81AADA122363EB5B003B77EB /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		81AADA142363EB97003B77EB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81AAD9F72363E92D003B77EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81AAD9F12363E92D003B77EB = {
+			isa = PBXGroup;
+			children = (
+				81AAD9FC2363E92D003B77EB /* foodnotepad1 */,
+				81AAD9FB2363E92D003B77EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81AAD9FB2363E92D003B77EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81AAD9FA2363E92D003B77EB /* foodnotepad1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81AAD9FC2363E92D003B77EB /* foodnotepad1 */ = {
+			isa = PBXGroup;
+			children = (
+				81AAD9FD2363E92D003B77EB /* AppDelegate.swift */,
+				81AAD9FF2363E92D003B77EB /* ViewController.swift */,
+				81AADA012363E92D003B77EB /* Main.storyboard */,
+				81AADA122363EB5B003B77EB /* MainTableViewController.swift */,
+				81AADA142363EB97003B77EB /* DetailViewController.swift */,
+				81AADA072363E92E003B77EB /* Assets.xcassets */,
+				81AADA092363E92E003B77EB /* LaunchScreen.storyboard */,
+				81AADA0C2363E92E003B77EB /* Info.plist */,
+				81AADA042363E92D003B77EB /* foodnotepad1.xcdatamodeld */,
+			);
+			path = foodnotepad1;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81AAD9F92363E92D003B77EB /* foodnotepad1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81AADA0F2363E92E003B77EB /* Build configuration list for PBXNativeTarget "foodnotepad1" */;
+			buildPhases = (
+				81AAD9F62363E92D003B77EB /* Sources */,
+				81AAD9F72363E92D003B77EB /* Frameworks */,
+				81AAD9F82363E92D003B77EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = foodnotepad1;
+			productName = foodnotepad1;
+			productReference = 81AAD9FA2363E92D003B77EB /* foodnotepad1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81AAD9F22363E92D003B77EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = iOS;
+				TargetAttributes = {
+					81AAD9F92363E92D003B77EB = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 81AAD9F52363E92D003B77EB /* Build configuration list for PBXProject "foodnotepad1" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81AAD9F12363E92D003B77EB;
+			productRefGroup = 81AAD9FB2363E92D003B77EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81AAD9F92363E92D003B77EB /* foodnotepad1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81AAD9F82363E92D003B77EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AADA0B2363E92E003B77EB /* LaunchScreen.storyboard in Resources */,
+				81AADA082363E92E003B77EB /* Assets.xcassets in Resources */,
+				81AADA032363E92D003B77EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81AAD9F62363E92D003B77EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AADA132363EB5B003B77EB /* MainTableViewController.swift in Sources */,
+				81AADA002363E92D003B77EB /* ViewController.swift in Sources */,
+				81AADA152363EB97003B77EB /* DetailViewController.swift in Sources */,
+				81AADA062363E92D003B77EB /* foodnotepad1.xcdatamodeld in Sources */,
+				81AAD9FE2363E92D003B77EB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		81AADA012363E92D003B77EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81AADA022363E92D003B77EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		81AADA092363E92E003B77EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81AADA0A2363E92E003B77EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81AADA0D2363E92E003B77EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		81AADA0E2363E92E003B77EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81AADA102363E92E003B77EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q79RFBT2AW;
+				INFOPLIST_FILE = foodnotepad1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hxp.com.foodnotepad1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81AADA112363E92E003B77EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q79RFBT2AW;
+				INFOPLIST_FILE = foodnotepad1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hxp.com.foodnotepad1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81AAD9F52363E92D003B77EB /* Build configuration list for PBXProject "foodnotepad1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81AADA0D2363E92E003B77EB /* Debug */,
+				81AADA0E2363E92E003B77EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81AADA0F2363E92E003B77EB /* Build configuration list for PBXNativeTarget "foodnotepad1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81AADA102363E92E003B77EB /* Debug */,
+				81AADA112363E92E003B77EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		81AADA042363E92D003B77EB /* foodnotepad1.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				81AADA052363E92D003B77EB /* foodnotepad1.xcdatamodel */,
+			);
+			currentVersion = 81AADA052363E92D003B77EB /* foodnotepad1.xcdatamodel */;
+			path = foodnotepad1.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 81AAD9F22363E92D003B77EB /* Project object */;
+}
