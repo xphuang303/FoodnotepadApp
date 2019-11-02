@@ -212,7 +212,7 @@ class MainTableViewController: UITableViewController {
         self.detailViewController = segue.destination as? DetailViewController
         let indexPath:IndexPath? = self.tableView.indexPathForSelectedRow
         if indexPath != nil {
-            detailViewController!.foodItem = self.allItems[(indexPath! as NSIndexPath).row]
+            detailViewController?.foodItem = self.allItems[(indexPath! as NSIndexPath).row]
         }
         else {
             //添加新的一项
