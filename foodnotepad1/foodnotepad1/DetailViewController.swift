@@ -87,6 +87,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         if foodItem?.name != nil{
             nameField.text = foodItem?.name
         }
+        else{
+            nameField.placeholder = NSLocalizedString("在此输入美食名称", comment: "")
+        }
         nameField.autocorrectionType = .yes
         nameField.returnKeyType = .done
         nameField.clearButtonMode = .never
@@ -94,6 +97,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     func configuetelephoneField() {
         if foodItem?.telephone != nil{
             telephoneField.text = foodItem?.telephone
+        }
+        else{
+            telephoneField.placeholder = NSLocalizedString("在此输入电话号码", comment: "")
         }
         telephoneField.autocorrectionType = .yes
         telephoneField.returnKeyType = .done
@@ -103,6 +109,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         if foodItem?.store != nil{
             storeField.text = foodItem?.store
         }
+        else{
+            storeField.placeholder = NSLocalizedString("在此输入食府名称", comment: "")
+        }
         storeField.autocorrectionType = .yes
         storeField.returnKeyType = .done
         storeField.clearButtonMode = .never
@@ -110,6 +119,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     func configuecommentField() {
         if foodItem?.comment != nil{
             commentField.text = foodItem?.comment
+        }
+        else{
+            commentField.placeholder = NSLocalizedString("在此输入美食评论", comment: "")
         }
         commentField.autocorrectionType = .yes
         commentField.returnKeyType = .done

@@ -90,13 +90,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="在此输入美食名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKI-aa-n3W">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKI-aa-n3W">
                                 <rect key="frame" x="4" y="113" width="310" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="在此输入食府名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-RL-v5A">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-RL-v5A">
                                 <rect key="frame" x="4" y="213" width="310" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -115,7 +115,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="挑选视频/照片"/>
                                 <connections>
-                                    <action selector="camera:" destination="4pU-LI-gG9" eventType="touchUpInside" id="Ke1-AY-CQ5"/>
                                     <action selector="photoAction:" destination="4pU-LI-gG9" eventType="touchUpInside" id="zef-Gk-yxD"/>
                                 </connections>
                             </button>
@@ -140,11 +139,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="拍摄视频/照片"/>
                                 <connections>
-                                    <action selector="camera:" destination="4pU-LI-gG9" eventType="touchUpInside" id="apz-Fh-QVE"/>
                                     <action selector="photoAction:" destination="4pU-LI-gG9" eventType="touchUpInside" id="Rqg-rF-mnZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="在此输入电话号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWP-we-RIr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWP-we-RIr">
                                 <rect key="frame" x="4" y="163" width="310" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

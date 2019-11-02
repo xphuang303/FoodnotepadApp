@@ -58,8 +58,8 @@ class MainTableViewController: UITableViewController {
         //let imgdata:ImageData = self.allImages[(indexPath as NSIndexPath).row]
         let imgdata = self.allItems[(indexPath as NSIndexPath).row].image1
         
-        //resize the image to width=30,height=30
-        let sacleSize:CGSize = CGSize(width:30,height:30)
+        //resize the image to width=40,height=40
+        let sacleSize:CGSize = CGSize(width:40,height:40)
         UIGraphicsBeginImageContextWithOptions(sacleSize,false,0.0)
         let img:UIImage = UIImage(data: imgdata! as Data)!
         img.draw(in: CGRect(x: 0,y: 0,width: sacleSize.width,height: sacleSize.height))
@@ -212,7 +212,7 @@ class MainTableViewController: UITableViewController {
         self.detailViewController = segue.destination as? DetailViewController
         let indexPath:IndexPath? = self.tableView.indexPathForSelectedRow
         if indexPath != nil {
-            detailViewController?.foodItem = self.allItems[(indexPath! as NSIndexPath).row]
+            detailViewController!.foodItem = self.allItems[(indexPath! as NSIndexPath).row]
         }
         else {
             //添加新的一项
