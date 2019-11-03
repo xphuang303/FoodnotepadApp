@@ -7,37 +7,42 @@
 //
 
 import UIKit
+import CoreLocation
 
-class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
 
+    var foodItem:FoodItem?
+    var latitude:Double?
+    var longitude:Double?
+    var locationViewController:LocationViewController?
+    var locationManager:CLLocationManager = CLLocationManager()
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var telephoneField: UITextField!
     @IBOutlet weak var storeField: UITextField!
     @IBOutlet weak var commentField: UITextField!
-    
     @IBOutlet weak var foodphoto: UIImageView!
-    var foodItem:FoodItem?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if foodItem?.name == nil{
+        if foodItem?.name == nil {
             self.title = "添加食物"
         }
-        else{
+        else {
             self.title = foodItem?.name
         }
         configuenameField()
         configuetelephoneField()
         configuestoreField()
         configuecommentField()
-        if foodItem?.image1 != nil{
-            foodphoto.image = UIImage(data: foodItem!.image1!)
+        if foodItem?.image1 != nil {
+            foodphoto.image = UIImage(data: (foodItem?.image1!)!)
         }
-        else if foodItem?.image2 != nil{
-            foodphoto.image = UIImage(data: foodItem!.image2!)
+        else if foodItem?.image2 != nil {
+            foodphoto.image = UIImage(data: (foodItem?.image2!)!)
         }
-        else {
+        else{
             foodphoto.image = UIImage(named: "Nophoto")
         }
         
@@ -45,7 +50,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     @IBAction func photoAction(_ sender: UIButton){
         let vc = UIImagePickerController()
-        if sender.tag == 1{
+        if sender.tag == 1 {
             vc.sourceType = .camera
             vc.mediaTypes = UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.camera)!
         }
@@ -63,9 +68,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
                 return
             }
             foodphoto.image = image
-            
             // Save the image to Photo library
             UIImageWriteToSavedPhotosAlbum(image, nil, nil , nil)
+            
+            recordLocation()
             picker.dismiss(animated: true)
         }
         else if picker.sourceType == .photoLibrary {
@@ -83,65 +89,127 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         self.dismiss(animated: true, completion: nil)
     }
     
-    func configuenameField() {
-        if foodItem?.name != nil{
-            nameField.text = foodItem?.name
+    //记录位置信息
+    func recordLocation() {
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            // 位置更新发生的最大距离
+            locationManager.distanceFilter = 100
+            let status = CLLocationManager.authorizationStatus()
+            // if iOS 8.0+
+            if self.locationManager.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization)) && status == CLAuthorizationStatus.notDetermined{
+                print("ask for authorization")
+                locationManager.requestWhenInUseAuthorization()
+            }
+            else{
+                // 启动位置更新服务
+                locationManager.startUpdatingLocation()
+                //              locationManager.allowsBackgroundLocationUpdates = true
+            }
         }
+            // 给用户警告：位置服务不可用
         else{
-            nameField.placeholder = NSLocalizedString("在此输入美食名称", comment: "")
+            print("Location service unavailable")
         }
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let newLocation:CLLocation = locations.last! as CLLocation
+        self.latitude = newLocation.coordinate.latitude
+        self.longitude = newLocation.coordinate.longitude
+//        let geoCoder = CLGeocoder()
+//        //        geoCoder.geocodeAddressString("广州市 华南师范大学") { (pMarks, error) in
+//        //
+//        //        }
+//        geoCoder.reverseGeocodeLocation(locations.last!) { (placeMarks:[CLPlacemark]?, error:Error?) -> Void in
+//            if let pMarks = placeMarks , pMarks.count>0{
+//                let pMark = pMarks[0]
+//                //                let addressDictionary = pMark.addressDictionary
+//                self.addressLabel.text = pMark.name! + ", " + pMark.administrativeArea!
+//
+//                print("Name=\(String(describing: pMark.name)),area=\(String(describing: pMark.administrativeArea))")
+//            }
+//        }
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse{
+            locationManager.startUpdatingLocation()
+            
+        }
+        else if status == .denied{
+            print("location service unavailable")
+        }
+    }
+    // 如果用户拒绝本程序使用位置服务，下次运行可在此处理
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if (error as NSError).code == CLError.denied.rawValue{
+            print("用户拒绝了本应用的位置服务")
+            locationManager.stopUpdatingLocation()
+        }
+    }
+    
+    
+    
+    
+    func configuenameField() {
+        
+        nameField.placeholder = NSLocalizedString("在此输入美食名称", comment: "")
+        nameField.text = foodItem?.name
         nameField.autocorrectionType = .yes
         nameField.returnKeyType = .done
-        nameField.clearButtonMode = .never
+        nameField.clearButtonMode = .always
     }
     func configuetelephoneField() {
-        if foodItem?.telephone != nil{
-            telephoneField.text = foodItem?.telephone
-        }
-        else{
-            telephoneField.placeholder = NSLocalizedString("在此输入电话号码", comment: "")
-        }
+        
+        telephoneField.placeholder = NSLocalizedString("在此输入电话号码", comment: "")
+        telephoneField.text = foodItem?.telephone
         telephoneField.autocorrectionType = .yes
         telephoneField.returnKeyType = .done
-        telephoneField.clearButtonMode = .never
+        telephoneField.clearButtonMode = .always
     }
     func configuestoreField() {
-        if foodItem?.store != nil{
-            storeField.text = foodItem?.store
-        }
-        else{
-            storeField.placeholder = NSLocalizedString("在此输入食府名称", comment: "")
-        }
+        
+        storeField.placeholder = NSLocalizedString("在此输入食府名称", comment: "")
+        storeField.text = foodItem?.store
         storeField.autocorrectionType = .yes
         storeField.returnKeyType = .done
-        storeField.clearButtonMode = .never
+        storeField.clearButtonMode = .always
     }
     func configuecommentField() {
-        if foodItem?.comment != nil{
-            commentField.text = foodItem?.comment
-        }
-        else{
-            commentField.placeholder = NSLocalizedString("在此输入美食评论", comment: "")
-        }
+        
+        commentField.placeholder = NSLocalizedString("在此输入美食评论", comment: "")
+        commentField.text = foodItem?.comment
         commentField.autocorrectionType = .yes
         commentField.returnKeyType = .done
-        commentField.clearButtonMode = .never
+        commentField.clearButtonMode = .always
     }
-
+    //点击return 收回键盘（没有成功）
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
         return true
     }
-    /*
+    //点击其他地方 收回键盘
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        nameField.resignFirstResponder()
+        telephoneField.resignFirstResponder()
+        storeField.resignFirstResponder()
+        commentField.resignFirstResponder()
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        
+        self.locationViewController = segue.destination as? LocationViewController
+        locationViewController?.food_latitude = self.latitude
+        locationViewController?.food_longitude = self.longitude
     }
-    */
+    
 
 }

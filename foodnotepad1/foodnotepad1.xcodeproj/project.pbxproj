@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		813A0FA0236EA216008C03E2 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A0F9F236EA216008C03E2 /* LocationViewController.swift */; };
 		81AAD9FE2363E92D003B77EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AAD9FD2363E92D003B77EB /* AppDelegate.swift */; };
-		81AADA002363E92D003B77EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AAD9FF2363E92D003B77EB /* ViewController.swift */; };
 		81AADA032363E92D003B77EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AADA012363E92D003B77EB /* Main.storyboard */; };
 		81AADA062363E92D003B77EB /* foodnotepad1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81AADA042363E92D003B77EB /* foodnotepad1.xcdatamodeld */; };
 		81AADA082363E92E003B77EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AADA072363E92E003B77EB /* Assets.xcassets */; };
@@ -18,9 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		813A0F9F236EA216008C03E2 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = ../LocationViewController.swift; sourceTree = "<group>"; };
 		81AAD9FA2363E92D003B77EB /* foodnotepad1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodnotepad1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AAD9FD2363E92D003B77EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81AAD9FF2363E92D003B77EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		81AADA022363E92D003B77EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81AADA052363E92D003B77EB /* foodnotepad1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = foodnotepad1.xcdatamodel; sourceTree = "<group>"; };
 		81AADA072363E92E003B77EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,10 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				81AAD9FD2363E92D003B77EB /* AppDelegate.swift */,
-				81AAD9FF2363E92D003B77EB /* ViewController.swift */,
 				81AADA012363E92D003B77EB /* Main.storyboard */,
 				81AADA122363EB5B003B77EB /* MainTableViewController.swift */,
 				81AADA142363EB97003B77EB /* DetailViewController.swift */,
+				813A0F9F236EA216008C03E2 /* LocationViewController.swift */,
 				81AADA072363E92E003B77EB /* Assets.xcassets */,
 				81AADA092363E92E003B77EB /* LaunchScreen.storyboard */,
 				81AADA0C2363E92E003B77EB /* Info.plist */,
@@ -144,8 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				813A0FA0236EA216008C03E2 /* LocationViewController.swift in Sources */,
 				81AADA132363EB5B003B77EB /* MainTableViewController.swift in Sources */,
-				81AADA002363E92D003B77EB /* ViewController.swift in Sources */,
 				81AADA152363EB97003B77EB /* DetailViewController.swift in Sources */,
 				81AADA062363E92D003B77EB /* foodnotepad1.xcdatamodeld in Sources */,
 				81AAD9FE2363E92D003B77EB /* AppDelegate.swift in Sources */,

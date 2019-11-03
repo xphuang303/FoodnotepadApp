@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MainTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController{
 
     var allItems:[FoodItem] = [FoodItem]()
     var detailViewController:DetailViewController?
@@ -141,19 +141,26 @@ class MainTableViewController: UITableViewController {
             self.allItems[i].store = vc.storeField.text
             self.allItems[i].comment = vc.commentField.text
             self.allItems[i].image1 = vc.foodphoto.image!.jpegData(compressionQuality: 0.8)
+            if vc.latitude != nil && vc.longitude != nil {
+                self.allItems[i].latitude = vc.latitude!
+                self.allItems[i].longitude = vc.longitude!
+            }
+            
             operateDataInCoreDataStore(indexPath: i, newItem: self.allItems[i])
             self.tableView.reloadRows(at: [indexPath!], with: UITableView.RowAnimation.automatic)
         }
         else {
-            //let newFoodItem = FoodItem(context: self.getContext())
-            self.allItems[allItems.count-1].name = vc.nameField.text
-            self.allItems[allItems.count-1].telephone = vc.telephoneField.text
-            self.allItems[allItems.count-1].store = vc.storeField.text
-            self.allItems[allItems.count-1].comment = vc.commentField.text
-            self.allItems[allItems.count-1].image1 = vc.foodphoto.image!.jpegData(compressionQuality: 0.8)
-            //allItems.append(newFoodItem)
-            
-            //self.allItems.append(vc.foodItem!)
+            let newFoodItem = FoodItem(context: self.getContext())
+            newFoodItem.name = vc.nameField.text
+            newFoodItem.telephone = vc.telephoneField.text
+            newFoodItem.store = vc.storeField.text
+            newFoodItem.comment = vc.commentField.text
+            newFoodItem.image1 = vc.foodphoto.image!.jpegData(compressionQuality: 0.8)
+            if vc.latitude != nil && vc.longitude != nil {
+                newFoodItem.latitude = vc.latitude!
+                newFoodItem.longitude = vc.longitude!
+            }
+            self.allItems.append(newFoodItem)
             operateDataInCoreDataStore(indexPath: allItems.count-1, newItem: self.allItems[allItems.count-1])
             self.tableView.reloadData()
         }
@@ -213,12 +220,26 @@ class MainTableViewController: UITableViewController {
         let indexPath:IndexPath? = self.tableView.indexPathForSelectedRow
         if indexPath != nil {
             detailViewController?.foodItem = self.allItems[(indexPath! as NSIndexPath).row]
+            detailViewController?.latitude = self.allItems[(indexPath! as NSIndexPath).row].latitude
+            detailViewController?.longitude = self.allItems[(indexPath! as NSIndexPath).row].longitude
+//            detailViewController?.title = self.allItems[(indexPath! as NSIndexPath).row].name
+//            detailViewController?.nameField.text = self.allItems[(indexPath! as NSIndexPath).row].name
+//            detailViewController?.telephoneField.text = self.allItems[(indexPath! as NSIndexPath).row].telephone
+//            detailViewController?.storeField.text = self.allItems[(indexPath! as NSIndexPath).row].store
+//            detailViewController?.commentField.text = self.allItems[(indexPath! as NSIndexPath).row].comment
+//            if self.allItems[(indexPath! as NSIndexPath).row].image1 != nil {
+//                detailViewController?.foodphoto.image = UIImage(data: self.allItems[(indexPath! as NSIndexPath).row].image1!)
+//            }
+//            else if self.allItems[(indexPath! as NSIndexPath).row].image2 != nil {
+//                detailViewController?.foodphoto.image = UIImage(data: self.allItems[(indexPath! as NSIndexPath).row].image2!)
+//            }
+            
         }
         else {
             //添加新的一项
             let newFoodItem = FoodItem(context: self.getContext())
-            allItems.append(newFoodItem)
-            detailViewController?.foodItem = self.allItems[allItems.count-1]
+            //allItems.append(newFoodItem) 不能在此时就新添加一项，应该在点击存储时再添加入数据中，因为用户可能会取消添加美食
+            detailViewController?.foodItem = newFoodItem
             
         }
         
