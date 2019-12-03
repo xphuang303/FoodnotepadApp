@@ -91,13 +91,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="425" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXY-iL-bJc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXY-iL-bJc">
                                 <rect key="frame" x="0.0" y="88" width="434" height="765"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QMk-cO-gwL">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMk-cO-gwL">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="638"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKI-aa-n3W">
                                                 <rect key="frame" x="15" y="0.0" width="310" height="30"/>
@@ -155,11 +153,27 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" label="Container View"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="414" id="7c0-Oj-8oF"/>
+                                            <constraint firstAttribute="height" constant="638" id="MRh-BW-3jJ"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QMk-cO-gwL" secondAttribute="trailing" constant="20" id="Fxe-7R-Xbc"/>
+                                    <constraint firstItem="QMk-cO-gwL" firstAttribute="leading" secondItem="dXY-iL-bJc" secondAttribute="leading" id="Mol-SR-bKV"/>
+                                    <constraint firstAttribute="bottom" secondItem="QMk-cO-gwL" secondAttribute="bottom" constant="127" id="uFE-ga-DSg"/>
+                                    <constraint firstItem="QMk-cO-gwL" firstAttribute="top" secondItem="dXY-iL-bJc" secondAttribute="top" id="yFJ-6f-MEF"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dXY-iL-bJc" firstAttribute="leading" secondItem="bxD-C0-9hW" secondAttribute="leading" id="A2e-t0-y6Q"/>
+                            <constraint firstItem="Qg8-Ai-qp0" firstAttribute="bottom" secondItem="dXY-iL-bJc" secondAttribute="bottom" constant="9" id="Dbz-9R-xT2"/>
+                            <constraint firstItem="dXY-iL-bJc" firstAttribute="top" secondItem="Qg8-Ai-qp0" secondAttribute="top" id="msZ-AA-w59"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dXY-iL-bJc" secondAttribute="trailing" constant="-29" id="zVw-Da-c5o"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Qg8-Ai-qp0"/>
                     </view>
                     <navigationItem key="navigationItem" id="xO2-ZH-G6I">

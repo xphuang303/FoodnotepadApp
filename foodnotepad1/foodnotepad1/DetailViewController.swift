@@ -11,6 +11,7 @@ import CoreLocation
 
 class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
 
+
     var foodItem:FoodItem?
     var latitude:Double?
     var longitude:Double?
@@ -70,7 +71,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
             foodphoto.image = image
             // Save the image to Photo library
             UIImageWriteToSavedPhotosAlbum(image, nil, nil , nil)
-            
+            //记录位置信息
             recordLocation()
             picker.dismiss(animated: true)
         }
@@ -207,8 +208,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         self.locationViewController = segue.destination as? LocationViewController
-        locationViewController?.food_latitude = self.latitude
-        locationViewController?.food_longitude = self.longitude
+        locationViewController?.food_latitude = self.foodItem?.latitude
+        locationViewController?.food_longitude = self.foodItem?.longitude
+        locationViewController?.new_latitude = self.latitude
+        locationViewController?.new_longitude = self.longitude
     }
     
 
