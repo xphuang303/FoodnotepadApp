@@ -141,9 +141,9 @@ class MainTableViewController: UITableViewController{
             self.allItems[i].store = vc.storeField.text
             self.allItems[i].comment = vc.commentField.text
             self.allItems[i].image1 = vc.foodphoto.image!.jpegData(compressionQuality: 0.8)
-            if vc.latitude != nil && vc.longitude != nil {
-                self.allItems[i].latitude = vc.latitude!
-                self.allItems[i].longitude = vc.longitude!
+            if vc.foodItem?.latitude != nil && vc.foodItem?.longitude != nil {
+                self.allItems[i].latitude = vc.foodItem!.latitude
+                self.allItems[i].longitude = vc.foodItem!.longitude
             }
             
             operateDataInCoreDataStore(indexPath: i, newItem: self.allItems[i])

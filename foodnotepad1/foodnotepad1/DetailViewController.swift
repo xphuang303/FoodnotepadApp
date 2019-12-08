@@ -47,6 +47,32 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
             foodphoto.image = UIImage(named: "Nophoto")
         }
         
+        //判断位置服务是否可用（类方法）
+        if CLLocationManager.locationServicesEnabled(){
+            //位置服务可用
+            //设置位置服务管理器对象locationManager的属性，如委托、更新位置信息的频度
+            locationManager.delegate = self  //委托对象
+            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            // 位置更新发生的最大距离
+            locationManager.distanceFilter = 100
+            let status = CLLocationManager.authorizationStatus()     //获取状态
+            // if iOS 8.0+
+            if self.locationManager.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization)) && status == CLAuthorizationStatus.notDetermined{
+                print("ask for authorization")
+                //请求用户同意使用定位服务
+                //这是一个异步的方法
+                locationManager.requestWhenInUseAuthorization()
+            }
+            else{
+                // 启动位置更新服务
+                locationManager.startUpdatingLocation()
+                //locationManager.allowsBackgroundLocationUpdates = true
+            }
+        }
+        //给用户警告：位置服务不可用
+        else{
+            print("Location service unavailable")
+        }
     }
     
     @IBAction func photoAction(_ sender: UIButton){
@@ -71,8 +97,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
             foodphoto.image = image
             // Save the image to Photo library
             UIImageWriteToSavedPhotosAlbum(image, nil, nil , nil)
-            //记录位置信息
-            recordLocation()
+            //记录拍照地点的位置信息
+            foodItem?.latitude = self.latitude!
+            foodItem?.longitude = self.longitude!
             picker.dismiss(animated: true)
         }
         else if picker.sourceType == .photoLibrary {
@@ -90,34 +117,36 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         self.dismiss(animated: true, completion: nil)
     }
     
-    //记录位置信息
-    func recordLocation() {
-        if CLLocationManager.locationServicesEnabled(){
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            // 位置更新发生的最大距离
-            locationManager.distanceFilter = 100
-            let status = CLLocationManager.authorizationStatus()
-            // if iOS 8.0+
-            if self.locationManager.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization)) && status == CLAuthorizationStatus.notDetermined{
-                print("ask for authorization")
-                locationManager.requestWhenInUseAuthorization()
-            }
-            else{
-                // 启动位置更新服务
-                locationManager.startUpdatingLocation()
-                //              locationManager.allowsBackgroundLocationUpdates = true
-            }
-        }
-            // 给用户警告：位置服务不可用
-        else{
-            print("Location service unavailable")
-        }
-    }
+//    //记录位置信息
+//    func recordLocation() {
+//        if CLLocationManager.locationServicesEnabled(){
+//            locationManager.delegate = self
+//            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//            // 位置更新发生的最大距离
+//            locationManager.distanceFilter = 100
+//            let status = CLLocationManager.authorizationStatus()
+//            // if iOS 8.0+
+//            if self.locationManager.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization)) && status == CLAuthorizationStatus.notDetermined{
+//                print("ask for authorization")
+//                locationManager.requestWhenInUseAuthorization()
+//            }
+//            else{
+//                // 启动位置更新服务
+//                locationManager.startUpdatingLocation()
+//                //locationManager.allowsBackgroundLocationUpdates = true
+//            }
+//        }
+//            // 给用户警告：位置服务不可用
+//        else{
+//            print("Location service unavailable")
+//        }
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //更新位置信息时调用此方法，传进来的数据时一个数组，最后一个元素是最新的位置信息
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation:CLLocation = locations.last! as CLLocation
         self.latitude = newLocation.coordinate.latitude
@@ -136,8 +165,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
 //            }
 //        }
     }
+    //请求用户同意定位服务时，用户做选择后会调用此方法
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse{
+        if status == CLAuthorizationStatus.authorizedAlways || status == CLAuthorizationStatus.authorizedWhenInUse{
             locationManager.startUpdatingLocation()
             
         }
@@ -213,6 +243,4 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         locationViewController?.new_latitude = self.latitude
         locationViewController?.new_longitude = self.longitude
     }
-    
-
 }
