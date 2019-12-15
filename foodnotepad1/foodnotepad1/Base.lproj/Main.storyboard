@@ -150,6 +150,21 @@
                                                     <action selector="photoAction:" destination="4pU-LI-gG9" eventType="touchUpInside" id="Rqg-rF-mnZ"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnL-2T-0ry">
+                                                <rect key="frame" x="339" y="20" width="50" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="camera" backgroundImage="camera"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTs-Px-Qpr">
+                                                <rect key="frame" x="339" y="79" width="50" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="phone"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwr-ba-URN">
+                                                <rect key="frame" x="341" y="127" width="55" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="mike"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" label="Container View"/>
@@ -275,7 +290,12 @@
             <point key="canvasLocation" x="2204" y="6"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="28" height="21"/>
+        <image name="mike" width="29.5" height="29.5"/>
+        <image name="phone" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="52i-yu-GsI"/>
+        <segue reference="Hqt-RO-pYA"/>
     </inferredMetricsTieBreakers>
 </document>
