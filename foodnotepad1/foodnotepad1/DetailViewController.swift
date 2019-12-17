@@ -27,6 +27,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(imageViewClick))
+        foodphoto?.addGestureRecognizer(gesture)
+        foodphoto?.isUserInteractionEnabled = true
+        
+        
         if foodItem?.name == nil {
             self.title = "添加食物"
         }
