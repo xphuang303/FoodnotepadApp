@@ -80,6 +80,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
     }
     
+    @objc func imageViewClick(){
+        print("图片点击事件")
+    }
+    
     @IBAction func photoAction(_ sender: UIButton){
         let vc = UIImagePickerController()
         if sender.tag == 1 {
@@ -151,7 +155,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // Dispose of any resources that can be recreated.
     }
     
-    //更新位置信息时调用此方法，传进来的数据时一个数组，最后一个元素是最新的位置信息
+    //更新位置信息时调用此方法，传进来的数据是一个数组，最后一个元素是最新的位置信息
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation:CLLocation = locations.last! as CLLocation
         self.latitude = newLocation.coordinate.latitude

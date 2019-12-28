@@ -17,7 +17,39 @@
 		81AADA152363EB97003B77EB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AADA142363EB97003B77EB /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		812F078C23B7814000F63B05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 812F078523B7814000F63B05 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC6E7CAB1C39A9D8006DF678;
+			remoteInfo = GPUImage_macOS;
+		};
+		812F078E23B7814000F63B05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 812F078523B7814000F63B05 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC6E7CB51C39A9D8006DF678;
+			remoteInfo = GPUImageTests_macOS;
+		};
+		812F079023B7814000F63B05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 812F078523B7814000F63B05 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9E34E91E524A2200B8604F;
+			remoteInfo = GPUImage_iOS;
+		};
+		812F079223B7814000F63B05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 812F078523B7814000F63B05 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9E34F11E524A2200B8604F;
+			remoteInfo = GPUImageTests_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		812F078523B7814000F63B05 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		817AF61D23966BCC0090CF32 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		81AAD9FA2363E92D003B77EB /* foodnotepad1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodnotepad1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AAD9FD2363E92D003B77EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,9 +73,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		812F078323B7807E00F63B05 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				812F078423B7811300F63B05 /* GPUImage */,
+			);
+			path = Submodules;
+			sourceTree = "<group>";
+		};
+		812F078423B7811300F63B05 /* GPUImage */ = {
+			isa = PBXGroup;
+			children = (
+				812F078523B7814000F63B05 /* GPUImage.xcodeproj */,
+			);
+			path = GPUImage;
+			sourceTree = "<group>";
+		};
+		812F078623B7814000F63B05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				812F078D23B7814000F63B05 /* GPUImage.framework */,
+				812F078F23B7814000F63B05 /* GPUImageTests_macOS.xctest */,
+				812F079123B7814000F63B05 /* GPUImage.framework */,
+				812F079323B7814000F63B05 /* GPUImageTests_iOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		81AAD9F12363E92D003B77EB = {
 			isa = PBXGroup;
 			children = (
+				812F078323B7807E00F63B05 /* Submodules */,
 				81AAD9FC2363E92D003B77EB /* foodnotepad1 */,
 				81AAD9FB2363E92D003B77EB /* Products */,
 			);
@@ -119,12 +179,49 @@
 			mainGroup = 81AAD9F12363E92D003B77EB;
 			productRefGroup = 81AAD9FB2363E92D003B77EB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 812F078623B7814000F63B05 /* Products */;
+					ProjectRef = 812F078523B7814000F63B05 /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				81AAD9F92363E92D003B77EB /* foodnotepad1 */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		812F078D23B7814000F63B05 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 812F078C23B7814000F63B05 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		812F078F23B7814000F63B05 /* GPUImageTests_macOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests_macOS.xctest;
+			remoteRef = 812F078E23B7814000F63B05 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		812F079123B7814000F63B05 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 812F079023B7814000F63B05 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		812F079323B7814000F63B05 /* GPUImageTests_iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests_iOS.xctest;
+			remoteRef = 812F079223B7814000F63B05 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		81AAD9F82363E92D003B77EB /* Resources */ = {
